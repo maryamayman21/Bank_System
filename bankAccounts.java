@@ -45,22 +45,6 @@ public class BankAccount {
         this.customerID = customerID;
     }
 
-     private long getRandomAccountNumber() {
-        
-        // Create an instance of the Random class
-        Random random = new Random();
-        
-        // Generate a random transaction ID
-         this.accountNumber= random.nextLong();
-        
-        // Ensure transactionID is positive (transaction IDs should be non-negative)
-        if (accountNumber < 0) {
-            accountNumber *= -1;
-        }
-        
-        return accountNumber;
-    }
-
    public void printAccountInfo(){
        System.out.println(" Account Number :" +accountNumber);
        System.out.println("Customer ID :" +getCustomerID());
@@ -75,8 +59,6 @@ public class BankAccount {
 class SavingAccount extends BankAccount{
     
 private double interest; 
-
-    
 
     public SavingAccount(double interest,long accountNumber ,double balance, int customerID) {
         super(accountNumber  , balance, customerID);
